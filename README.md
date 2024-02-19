@@ -2,18 +2,7 @@
 description: >-
   This page will instruct you on properly preparing your development environment
   for ROS2 and WSLG.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
+
 
 # Initial Setup
 
