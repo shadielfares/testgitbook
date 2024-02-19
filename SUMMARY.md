@@ -1,3 +1,4 @@
 # Table of contents
 
-* [ROS Quick Start](README.md)
+* [Initial Setup](README.md)
+* [ROS Quick Start](<README (1).md>)
