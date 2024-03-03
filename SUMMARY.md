@@ -1,4 +1,10 @@
 # Table of contents
 
+## Onboarding
+
 * [Initial Setup](README.md)
-* [ROS Quick Start](<README (1).md>)
+* [High-Level Overview](onboarding/high-level-overview.md)
+
+***
+
+* [High Level Overview](high-level-overview.md)
