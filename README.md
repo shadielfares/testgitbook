@@ -22,6 +22,45 @@ At this point in the installation guide, you will have your respective Ubuntu di
 
 We will now proceed to install the current ROS2 packages. For reference, we will be using the [MMRT Maxwell repository](#user-content-fn-1)[^1] as our source of instruction, however, you may continue with the following:
 
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Test 1</td><td></td></tr><tr><td></td><td>Test 2</td><td></td></tr><tr><td>Test 3</td><td></td><td>Test 5</td></tr></tbody></table>
+
+{% tabs %}
+{% tab title="Configuring rosdep" %}
+Configuring `rosdep`
+
+```
+sudo apt update && sudo apt install python3-rosdep -y
+sudo rosdep init
+rosdep update
+```
+{% endtab %}
+
+{% tab title="Cloning Repo" %}
+Clone this repo
+
+```
+git clone https://github.com/MacRover/maxwell.git
+```
+{% endtab %}
+
+{% tab title="Dependencies" %}
+Use `rosdep` to install repo dependencies
+
+```
+cd maxwell/ros_ws
+rosdep install --from-paths src --ignore-src -y
+```
+{% endtab %}
+
+{% tab title="Robot packages" %}
+Build robot packages
+
+```
+colcon build --symlink-install
+```
+{% endtab %}
+{% endtabs %}
+
 Configuring `rosdep`
 
 ```
