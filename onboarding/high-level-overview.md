@@ -24,7 +24,7 @@ The OBC will be the Jetson AGX Orin as of V2.
 
     For your understanding, **many but not all** processes that occur throughout the rover are done through the OBC. Specifically regarding Infrared 3-D Image Processing, any AI inference tasks, and ... \[<mark style="color:blue;">ASK the squad for more</mark>]
 2. CAN is the main method of communication used throughout the rover. Used for all drive and stepper motors and is used for all communication over the RADBOARD. CANBUS is the process by which information is delivered through 8 or 64-byte packets_._ For reference, many physical wires on the board use CAN, however, you can further determine the exact protocol by referring to \[1] for specific cases.&#x20;
-3. RAD BOARD connects the GPS and LoRa \[INCLUDE MORE ]using a Reader, Writer Architecture.&#x20;
+3. RAD BOARD connects the GPS and LoRa \[INCLUDE MORE ]using a Reader, Writer Architecture similar to [ROS2's structure](https://docs.ros.org/en/iron/index.html).&#x20;
 
 For example, if we would like the current position of the rover, the two components we need to focus on are the RADBOARD and GPS.
 
@@ -71,8 +71,4 @@ OBC Documentation
 {% file src="../.gitbook/assets/Project_Spec_RAD_V2.pdf" %}
 RAD Documentation
 {% endfile %}
-
-Subscriber / Publisher Relationship:
-
-One of the first concepts shown to you is how ROS operates between a subscriber node and a publisher node. This is incorporated in the&#x20;
 
