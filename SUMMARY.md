@@ -14,5 +14,4 @@
 * [Science Module](v2-board/science-module.md)
 * [Battery Subassembly](v2-board/battery-subassembly.md)
 * [Drivetrain](v2-board/drivetrain.md)
-* [Page](v2-board/page.md)
 * [Antenna Mount](v2-board/antenna-mount.md)
