@@ -17,12 +17,12 @@ This c.p is essential for transferring data between circuits using only two wire
 Familiarize yourselves with the following terms and be sure to understand their relationship to the overall functions of the Rover:
 
 {% hint style="info" %}
-The OBC will be the Jetson AGX Orin as of V2.
+The OBC and Jetson AGX Orin work in-synchronous as the main core of the rover.
 {% endhint %}
 
-1.  The On-Board Controller, better known as OBC "..._is the main communication hub for all subassemblies in the V2 rover._" \[2]&#x20;
+1.  The Jetson is the main communication hub for all subassemblies in the V2 rover.\[2]&#x20;
 
-    For your understanding, **many but not all** processes that occur throughout the rover are done through the OBC. Specifically regarding Infrared 3-D Image Processing, any AI inference tasks, and ... \[<mark style="color:blue;">ASK the squad for more</mark>]
+    For your understanding, **many but not all** processes that occur throughout the rover are done through the Jetson. Specifically regarding Infrared 3-D Image Processing and processing GPS coordinates just to name a few.
 2. CAN is the main method of communication used throughout the rover. Used for all drive and stepper motors and is used for all communication over the RADBOARD. CANBUS is the process by which information is delivered through 8 or 64-byte packets_._ For reference, many physical wires on the board use CAN, however, you can further determine the exact protocol by referring to \[1] for specific cases.&#x20;
 3. RAD BOARD connects the GPS and LoRa \[INCLUDE MORE ]using a Reader, Writer Architecture similar to [ROS2's structure](https://docs.ros.org/en/iron/index.html).&#x20;
 
@@ -42,13 +42,11 @@ This reader-writer relationship goes both ways to allow for safe and effective c
 
 ### Briefly on Communication Protocols:
 
-We can now understand that CAN is used on inter-board basis, however what do we use to actually have micro-controllers and additional peripherals **on the same board?**
+We can now understand that CAN is used on an inter-board basis, however, what do we use to actually have micro-controllers and additional peripherals **on the same board?**
 
 This would be the Serial Peripheral Interface \[SPI] c.p.&#x20;
 
 SPI offers a similar Master / Slave Architecture to [I2C ](../communication-protocol-i2c.md)however as previously stated only exists within each respective board.&#x20;
-
-For example.. \[<mark style="color:blue;">ASK THE SQUAD</mark>]
 
 
 
