@@ -51,14 +51,6 @@ cd maxwell/ros_ws
 rosdep install --from-paths src --ignore-src -y
 ```
 {% endtab %}
-
-{% tab title="Robot packages" %}
-Build robot packages
-
-```
-colcon build --symlink-install
-```
-{% endtab %}
 {% endtabs %}
 
 You have now completed the MMRT Initial Setup.
