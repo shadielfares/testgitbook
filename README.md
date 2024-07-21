@@ -14,8 +14,6 @@ Upon approaching the **0:50 mark** of the video instead of `Ubuntu -18.04`_,_ pl
 
 As of February 2024, the latest working version of Ubuntu with Windows 11 WSLG is `Ubuntu 22.04.3 LTS.`
 
-####
-
 {% embed url="https://youtu.be/-_mZusYmJ8o?si=F3y4R7wTN-wu8WDH&t=5" %}
 
 {% hint style="info" %}
