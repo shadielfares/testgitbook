@@ -29,7 +29,7 @@ We will now proceed to install the current ROS2 packages. For reference, we will
 Configuring `rosdep`
 
 ```
-sudo apt update && sudo apt install python3-rosdep -y
+sudo apt update && sudo apt install python3-rosdep2 -y
 sudo rosdep init
 rosdep update
 ```
