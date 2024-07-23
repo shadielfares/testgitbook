@@ -22,6 +22,76 @@ As of February 2024, the latest working version of Ubuntu with Windows 11 WSLG i
 
 At this point in the installation guide, you will have your respective Ubuntu distro installed via WSLG.
 
+Now we will proceed with installing Ros-2-Iron-Irwini. Instructions follow their official doc's page:&#x20;
+
+{% tabs %}
+{% tab title="Set Locale" %}
+```
+locale # check for UTF-8
+sudo apt update && sudo apt install locales sudo locale-gen en_US en_US.UTF-8 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 export LANG=en_US.UTF-8
+locale # verify settingsSet Locale
+```
+{% endtab %}
+
+{% tab title="Enable Required Repositories" %}
+```
+sudo apt install software-properties-common sudo add-apt-repository universe 
+```
+{% endtab %}
+
+{% tab title="Enable Required Repositories (2)" %}
+```
+sudo apt update && sudo apt install curl -y sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+```
+{% endtab %}
+
+{% tab title="Enable Required Repositories (3)" %}
+```
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+```
+{% endtab %}
+
+{% tab title="Optional: Development Tools" %}
+```
+sudo apt update && sudo apt install ros-dev-tools
+```
+{% endtab %}
+
+{% tab title="Installing Ros2" %}
+```
+sudo apt update && sudo apt upgrade -y
+```
+{% endtab %}
+
+{% tab title="Install Ros2 (2)" %}
+```
+sudo apt install ros-iron-desktop
+```
+{% endtab %}
+
+{% tab title="Install Ros2 (3)" %}
+```
+sudo apt install ros-iron-ros-base
+```
+{% endtab %}
+
+{% tab title="Setting Up Environment" %}
+```
+nano .bashrc 
+```
+{% endtab %}
+
+{% tab title="Setting Up Environment (2)" %}
+\#Scroll down with the arrow keys all the way to the bottom of the file and paste the following command:&#x20;
+
+After pasting: CRTL+S, CTRL+X
+
+```
+source /opt/ros/iron/setup.bash
+```
+{% endtab %}
+{% endtabs %}
+
 We will now proceed to install the current ROS2 packages. For reference, we will be using the [MMRT Maxwell repository](#user-content-fn-1)[^1] as our source of instruction, however, you may continue with the following:
 
 {% tabs %}
@@ -49,6 +119,12 @@ Use `rosdep` to install repo dependencies
 ```
 cd maxwell/ros_ws
 rosdep install --from-paths src --ignore-src -y
+```
+{% endtab %}
+
+{% tab title="Colon Build" %}
+```
+colcon build --symlink-install
 ```
 {% endtab %}
 {% endtabs %}
